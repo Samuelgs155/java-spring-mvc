@@ -13,20 +13,20 @@ import com.spring.example.model.Person;
 @RequestMapping("/example3")
 public class ExampleController3 {
 	
-	public static final String EXAMPLE_VIEW = "example3";
+	public static final String EXAMPLE_VIEW_3 = "example3";
 	
 	// Primera forma recuperar plantillas
 	// @GetMapping("/exampleString")
 	@RequestMapping(value="/exampleString", method=RequestMethod.GET)
 	public String exampleString(Model model) {
 		model.addAttribute("person", new Person("Sam", 25));
-		return EXAMPLE_VIEW;
+		return EXAMPLE_VIEW_3;
 	}
 	
 	// Segunda forma recuperar plantillas
 	@RequestMapping(value="/exampleMAV", method=RequestMethod.GET)
 	public ModelAndView exampleMAV() {
-		ModelAndView mav = new ModelAndView(EXAMPLE_VIEW);
+		ModelAndView mav = new ModelAndView(EXAMPLE_VIEW_3);
 		mav.addObject("person", new Person("Paco", 30));		
 		return mav;
 	}

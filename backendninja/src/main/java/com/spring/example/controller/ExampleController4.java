@@ -16,20 +16,20 @@ import com.spring.example.model.Person;
 @RequestMapping("/example4")
 public class ExampleController4 {
 	
-	public static final String EXAMPLE_VIEW = "example4";
+	public static final String EXAMPLE_VIEW_4 = "example4";
 	
 	// Primera forma recuperar plantillas
 	// @GetMapping("/exampleString")
 	@RequestMapping(value="/exampleString", method=RequestMethod.GET)
 	public String exampleString(Model model) {
 		model.addAttribute("people", this.getPeople());
-		return EXAMPLE_VIEW;
+		return EXAMPLE_VIEW_4;
 	}
 	
 	// Segunda forma recuperar plantillas
 	@RequestMapping(value="/exampleMAV", method=RequestMethod.GET)
 	public ModelAndView exampleMAV() {
-		ModelAndView mav = new ModelAndView(EXAMPLE_VIEW);
+		ModelAndView mav = new ModelAndView(EXAMPLE_VIEW_4);
 		mav.addObject("people", this.getPeople());		
 		return mav;
 	}
